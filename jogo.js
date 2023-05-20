@@ -1,31 +1,48 @@
 
-var alt = 0
-var larg = 0
+    var alt = 0
+    var larg = 0
 
-function ajustaTela()  {
-    alt = window.innerHeight
-    larg = window.innerWidth
-     
-    console.log(alt, larg)
-}
+    function ajustaTela()  {
+        alt = window.innerHeight
+        larg = window.innerWidth
+        
+        console.log(alt, larg)
+    }
 
-ajustaTela()
+    ajustaTela()
 
-function positionRandom() {
-var posicaox = Math.floor(Math.random() * larg) - 90
-var posicaoy = Math.floor(Math.random() * alt) - 90
+    function positionRandom() {
+        var posicaox = Math.floor(Math.random() * larg) - 90
+        var posicaoy = Math.floor(Math.random() * alt) - 90
 
-posicaox = posicaox < 0 ? 0 : posicaox
-posicaoy = posicaoy < 0 ? 0 : posicaoy
+        posicaox = posicaox < 0 ? 0 : posicaox
+        posicaoy = posicaoy < 0 ? 0 : posicaoy
 
-console.log(posicaox, posicaoy)
+        console.log(posicaox, posicaoy)
 
-var mosquito = document.createElement('img')
-mosquito.src = 'assets/imagens/mosca.png'
-mosquito.className='mosquito'
-mosquito.style.left = posicaox + 'px'
-mosquito.style.top = posicaoy + 'px'
-mosquito.style.position = 'absolute'
+        var mosquito = document.createElement('img')
+        mosquito.src = 'assets/imagens/mosca.png'
+        mosquito.className='mosquito'
+        mosquito.style.left = posicaox + 'px'
+        mosquito.style.top = posicaoy + 'px'
+        mosquito.style.position = 'absolute'
 
-document.body.appendChild(mosquito)
-}
+        document.body.appendChild(mosquito)
+        
+        console.log(tamanhoAleatorio())
+    }
+    
+    function tamanhoAleatorio() {
+        var classe = Math.floor(Math.random() * 3)
+        
+        switch(classe){
+            case 0:
+                return 'mosqui'  
+            
+            case 1:
+                return 'mosquito2'
+
+            case 2:
+                return 'mosquito3'
+        }
+    }

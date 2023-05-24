@@ -11,6 +11,11 @@ function ajustaTela() {
 ajustaTela();
 
 function positionRandom() {
+  //removendo mosquito caso exista
+  if (document.getElementById('mosquito')) {
+      document.getElementById('mosquito').remove()
+  }
+
   var posicaoX = Math.floor(Math.random() * larg) - 90;
   var posicaoY = Math.floor(Math.random() * alt) - 90;
 
@@ -25,6 +30,7 @@ function positionRandom() {
   mosquito.style.left = posicaoX + "px";
   mosquito.style.top = posicaoY + "px";
   mosquito.style.position = "absolute";
+  mosquito.id = "mosquito";
 
   document.body.appendChild(mosquito);
 }

@@ -1,5 +1,6 @@
 var alt = 0;
 var larg = 0;
+var vidas = 1
 
 function ajustaTela() {
   alt = window.innerHeight;
@@ -14,6 +15,13 @@ function positionRandom() {
   //removendo mosquito caso exista
   if (document.getElementById('mosquito')) {
       document.getElementById('mosquito').remove()
+
+      if(vidas > 4) {
+        alert('GAMER OVER')
+      }else {
+      document.getElementById('v' + vidas).src = "./assets/imagens/coracao_vazio.png"
+      vidas++
+      }
   }
 
   var posicaoX = Math.floor(Math.random() * larg) - 90;
@@ -31,6 +39,9 @@ function positionRandom() {
   mosquito.style.top = posicaoY + "px";
   mosquito.style.position = "absolute";
   mosquito.id = "mosquito";
+  mosquito.onclick = function() {
+    this.remove(mosquito)
+  }
 
   document.body.appendChild(mosquito);
 }

@@ -36,7 +36,7 @@ body {
     width: 190px;
     padding: 10px;
     bottom: 0px;
-    opacity: 0,7;
+    opacity: 8.0;
 }
 
 .vidas {
@@ -47,4 +47,47 @@ body {
     float: left;
     font-size: 20px;
     font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  margin-top: 50px;
+  color: white;
+  font-weight: 900;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+  border: none;
+  background-color: blueviolet;  
+}
+
+button:hover {
+  background-color: #fff;
+  color: blueviolet;
+}
+
+button a {
+  padding: 12px 55px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+button a:hover {
+  color: blueviolet;
 }

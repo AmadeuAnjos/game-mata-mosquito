@@ -1,6 +1,7 @@
 var alt = 0;
 var larg = 0;
 var vidas = 1
+var tempo = 5
 
 function ajustaTela() {
   alt = window.innerHeight;
@@ -10,6 +11,17 @@ function ajustaTela() {
 }
 
 ajustaTela();
+
+var cronometro = setInterval(function() {
+
+  tempo -= 1
+  if(tempo < 0){
+     clearInterval(cronometro)
+     clearInterval(criaMosquito)
+  } else {
+  document.getElementById('cronometro').innerHTML = tempo
+  }
+}, 1000)
 
 function positionRandom() {
   //removendo mosquito caso exista

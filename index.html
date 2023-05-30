@@ -11,15 +11,38 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      function start() {
+        var nivel = document.getElementById('nivel').value
+
+        if(nivel === '') {
+          alert('Selecione um nível para iniciar o jogo')
+          return false
+        }
+        alert(nivel)
+
+      }
+    </script>
+
     <title>Vitória</title>
   </head>
   <body>
     <div class="container">
       <h1>Muito bom, vem com Dorival que você passa de ano !</h1>
       <div class="image">
-        <img src="./assets/imagens/vitoria.png" alt="" />
+        <img src="./assets/imagens/game.png" alt="" />
       </div>
-      <button><a href="./app.html">Voltar</a></button>
+
+      <div class="selecionar">
+        <select name="nivel" id="nivel">
+          <option value="">Select</option>
+          <option value="easy">Easy</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>-
+        </select>
+      </div>
+      <button><a href="./app.html" onclick="start()">Iniciar</a></button>
     </div>
   </body>
 </html>

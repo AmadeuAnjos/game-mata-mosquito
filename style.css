@@ -91,3 +91,9 @@ button a {
 button a:hover {
   color: blueviolet;
 }
+
+select {
+  width: 250px;
+
+  margin-bottom: 10px;
+}

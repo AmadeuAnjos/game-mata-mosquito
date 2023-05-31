@@ -1,3 +1,7 @@
+html {
+  cursor: url('./assets/imagens/mata_mosca.png') 30 30, auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -69,7 +73,7 @@ body {
 }
 
 button {
-  width: 150px;
+  width: 250px;
   height: 40px;
   border-radius: 7px;
   border: none;
@@ -92,8 +96,20 @@ button a:hover {
   color: blueviolet;
 }
 
+#buttone {
+  color: white;
+}
+
+#buttone:hover {
+  color: blueviolet;
+}
+
 select {
   width: 250px;
 
   margin-bottom: 10px;
+}
+
+#starte {
+  margin-top: 10px;
 }

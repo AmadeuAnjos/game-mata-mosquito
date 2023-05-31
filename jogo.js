@@ -1,7 +1,20 @@
 var alt = 0;
 var larg = 0;
-var vidas = 1
-var tempo = 15
+var vidas = 1;
+var tempo = 15;
+
+var criaMosquitoTempo = 1500
+
+var nivel = window.location.search;
+nivel = nivel.replace("?", "");
+
+if (nivel === 'easy') {
+  criaMosquitoTempo = 1500
+} else if (nivel === 'normal') {
+  criaMosquitoTempo = 1000
+} else if (nivel === 'hard') {
+  criaMosquitoTempo = 750
+}
 
 function ajustaTela() {
   alt = window.innerHeight;
@@ -12,29 +25,29 @@ function ajustaTela() {
 
 ajustaTela();
 
-var cronometro = setInterval(function() {
-
-  tempo -= 1
-  if(tempo < 0){
-     clearInterval(cronometro)
-     clearInterval(criaMosquito)
-     window.location.href = "./victory.html"
+var cronometro = setInterval(function () {
+  tempo -= 1;
+  if (tempo < 0) {
+    clearInterval(cronometro);
+    clearInterval(criaMosquito);
+    window.location.href = "./victory.html";
   } else {
-  document.getElementById('cronometro').innerHTML = tempo
+    document.getElementById("cronometro").innerHTML = tempo;
   }
-}, 1000)
+}, 1000);
 
 function positionRandom() {
   //removendo mosquito caso exista
-  if (document.getElementById('mosquito')) {
-      document.getElementById('mosquito').remove()
+  if (document.getElementById("mosquito")) {
+    document.getElementById("mosquito").remove();
 
-      if(vidas > 3) {        
-        window.location.href = "./fim_de_jogo.html"
-      }else {
-      document.getElementById('v' + vidas).src = "./assets/imagens/coracao_vazio.png"
-      vidas++
-      }
+    if (vidas > 3) {
+      window.location.href = "./fim_de_jogo.html";
+    } else {
+      document.getElementById("v" + vidas).src =
+        "./assets/imagens/coracao_vazio.png";
+      vidas++;
+    }
   }
 
   var posicaoX = Math.floor(Math.random() * larg) - 90;
@@ -52,9 +65,9 @@ function positionRandom() {
   mosquito.style.top = posicaoY + "px";
   mosquito.style.position = "absolute";
   mosquito.id = "mosquito";
-  mosquito.onclick = function() {
-    this.remove(mosquito)
-  }
+  mosquito.onclick = function () {
+    this.remove(mosquito);
+  };
 
   document.body.appendChild(mosquito);
 }

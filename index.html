@@ -20,7 +20,7 @@
           alert('Selecione um nível para iniciar o jogo')
           return false
         }
-        alert(nivel)
+        window.location.href = "app.html?" + nivel
 
       }
     </script>
@@ -42,7 +42,7 @@
           <option value="hard">Hard</option>-
         </select>
       </div>
-      <button><a href="./app.html" onclick="start()">Iniciar</a></button>
+      <button id="buttone" onclick="start()">Iniciar</button>
     </div>
   </body>
 </html>

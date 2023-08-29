@@ -10,8 +10,8 @@ html {
 
 body {
   background-image: url('assets/imagens/bg.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 .mosquito {
